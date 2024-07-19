@@ -1,0 +1,32 @@
+-- Execute the first script immediately
+local success, errorMessage = pcall(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/9zpSmYff"))()
+end)
+if not success then
+    warn("Failed to execute the first script: " .. errorMessage)
+end
+
+-- Wait for 5 seconds
+wait(5)
+
+-- Execute the other scripts all at the same time
+local function executeScripts()
+    local urls = {
+        "https://raw.githubusercontent.com/MysteryPerson20/Sbg-private-script/main/Made%20by%20main_character584",
+        "https://pastebin.com/raw/R1rSrtgf",
+        "https://raw.githubusercontent.com/MysteryPerson20/Tool/main/Tool",
+        "https://raw.githubusercontent.com/MysteryPerson20/No-stun/main/Player"
+    }
+
+    for _, url in ipairs(urls) do
+        local success, errorMessage = pcall(function()
+            loadstring(game:HttpGet(url))()
+        end)
+        if not success then
+            warn("Failed to execute script from URL " .. url .. ": " .. errorMessage)
+        end
+    end
+end
+
+-- Execute the scripts
+executeScripts()

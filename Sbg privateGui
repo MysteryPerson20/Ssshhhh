@@ -14,7 +14,6 @@ local function executeScripts()
     local urls = {
         "https://raw.githubusercontent.com/MysteryPerson20/Sbg-private-script/main/Made%20by%20main_character584",
         "https://pastebin.com/raw/R1rSrtgf",
-        "https://raw.githubusercontent.com/MysteryPerson20/Tool/main/Tool",
         "https://raw.githubusercontent.com/MysteryPerson20/No-stun/main/Player"
     }
 

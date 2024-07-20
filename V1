@@ -1,0 +1,41 @@
+-- Create ScreenGui
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Create TextButton
+local textButton = Instance.new("TextButton")
+textButton.Parent = screenGui
+textButton.Size = UDim2.new(0, 100, 0, 30) -- Smaller size of the button
+textButton.Position = UDim2.new(1, -110, 0, 10) -- Top right corner with some padding
+textButton.BackgroundColor3 = Color3.new(1, 0, 0) -- Red color
+textButton.Text = "100 Series!"
+textButton.Font = Enum.Font.SourceSans
+textButton.TextColor3 = Color3.new(1, 1, 1) -- White text
+textButton.TextStrokeTransparency = 0 -- White outline
+textButton.TextSize = 14
+textButton.BorderSizePixel = 0
+textButton.BackgroundTransparency = 0.2
+textButton.AutoButtonColor = false
+textButton.TextStrokeColor3 = Color3.new(1, 1, 1) -- White outline
+
+-- Make the button rounded
+local uICorner = Instance.new("UICorner")
+uICorner.CornerRadius = UDim.new(0, 8) -- Adjust the radius to your preference
+uICorner.Parent = textButton
+
+-- Button functionality
+textButton.MouseButton1Click:Connect(function()
+    -- Destroy specific GUIs
+    local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+    for _, gui in pairs(playerGui:GetChildren()) do
+        if gui:IsA("ScreenGui") and gui.Name == "MessageButtonGui" then
+            gui:Destroy()
+        end
+    end
+
+    -- Destroy the current GUI
+    screenGui:Destroy()
+
+    -- Execute the script
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MysteryPerson20/Ssshhhh/main/Sbg%20privateGui"))()
+end)

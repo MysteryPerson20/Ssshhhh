@@ -1,4 +1,4 @@
--- First script with 2-second delay
+-- First script with 4-second delay
 local args = {
     [1] = {
         ["Goal"] = "Emote",
@@ -6,8 +6,8 @@ local args = {
     }
 }
 
--- Delay execution for 2 seconds
-wait(2)
+-- Delay execution for 4 seconds
+wait(4)
 
 game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
 

